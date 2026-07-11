@@ -775,14 +775,18 @@ export default function LandingPage() {
             className="fixed bottom-0 left-0 right-0 p-4 bg-background/80 backdrop-blur-lg border-t border-border z-50 md:hidden flex justify-center"
           >
             <Button
-              size="lg"
-              className="w-full max-w-sm h-14 text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-lg"
-              asChild
-            >
-              <a href="https://pay.hotmart.com/D106702430V" target="_blank" rel="noopener noreferrer">
-                Obtener el Paquete por $9.99
-              </a>
-            </Button>
+  size="lg"
+  onClick={() => {
+    const premiumCard = document.getElementById("plan-premium");
+    if (premiumCard) {
+      const y = premiumCard.getBoundingClientRect().top + window.pageYOffset - 90;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }}
+  className="w-full max-w-sm h-14 text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-lg"
+>
+  Obtener el Paquete por $9.99
+</Button>
           </motion.div>
         )}
       </AnimatePresence>
