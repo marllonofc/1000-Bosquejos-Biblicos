@@ -74,10 +74,10 @@ export default function LandingPage() {
   return (
     <div className="min-h-[100dvh] bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
 
-      {/* Decorative background glow */}
-      <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-primary/5 blur-[120px]" />
-        <div className="absolute top-[40%] -left-[10%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[100px]" />
+      {/* Decorative background glow — desktop only (blur is too expensive on mobile) */}
+      <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0 hidden md:block">
+        <div className="absolute top-0 right-0 w-[40%] h-[40%] rounded-full bg-primary/5 blur-[100px]" />
+        <div className="absolute top-[40%] left-0 w-[35%] h-[35%] rounded-full bg-primary/5 blur-[80px]" />
       </div>
 
       <div className="relative z-10 overflow-x-hidden">
@@ -237,8 +237,8 @@ export default function LandingPage() {
 
             {/* ÍNDICE */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               className="relative"
@@ -311,9 +311,9 @@ export default function LandingPage() {
                     key={currentSlide}
                     src={entregableImages[currentSlide]}
                     alt={`Vista Previa ${currentSlide + 1}`}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                     transition={{ duration: 0.35 }}
                     className="absolute inset-0 w-full h-full object-contain p-1 bg-white"
                   />
@@ -464,7 +464,7 @@ export default function LandingPage() {
                     "Entre las visitas al hospital, la administración de la iglesia y las consejerías, la semana se desarma. Este material optimiza el 70% del trabajo de escritorio. El resto es oración y ponerle mi propia voz."
                   </p>
                   <div className="flex items-center gap-3">
-                    <img src="https://i.ibb.co/9mpVBghT/494899138-2966921366821797-9074009184064295111-n.jpg" alt="Pastor Carlos" className="w-12 h-12 rounded-full object-cover border border-primary/30" />
+                    <img src="https://i.ibb.co/9mpVBghT/494899138-2966921366821797-9074009184064295111-n.jpg" alt="Pastor Carlos" loading="lazy" decoding="async" className="w-12 h-12 rounded-full object-cover border border-primary/30" />
                     <div>
                       {/* 5 Estrelas acima do nome */}
                       <div className="flex gap-0.5 mb-1 text-primary">
@@ -489,7 +489,7 @@ export default function LandingPage() {
                     "Viajo mucho predicando en diferentes altares y a veces la mente se agota. Usar este material como chispazo para nuevas series de mensajes ha sido una bendición para mi mente."
                   </p>
                   <div className="flex items-center gap-3">
-                    <img src="https://i.ibb.co/fzX5TQS1/686202462-10232880034930706-4041396154218817519-n.jpg" alt="Evangelista Marcos" className="w-12 h-12 rounded-full object-cover border border-primary/30" />
+                    <img src="https://i.ibb.co/fzX5TQS1/686202462-10232880034930706-4041396154218817519-n.jpg" alt="Evangelista Marcos" loading="lazy" decoding="async" className="w-12 h-12 rounded-full object-cover border border-primary/30" />
                     <div>
                       {/* 5 Estrelas acima do nome */}
                       <div className="flex gap-0.5 mb-1 text-primary">
@@ -513,7 +513,7 @@ export default function LandingPage() {
                     "Además de liderar el ministerio de mujeres, apoyo a mi esposo en las células. Mi tiempo es oro. Este material me dio un respiro gigante; los temas son profundos pero están explicados de una forma que cualquiera en la iglesia los entiende."
                   </p>
                   <div className="flex items-center gap-3">
-                    <img src="https://i.ibb.co/XrmKyDWK/491278299-122204556698145600-7351154097795961159-n.jpg" alt="Pastora Elena" className="w-12 h-12 rounded-full object-cover border border-primary/30" />
+                    <img src="https://i.ibb.co/XrmKyDWK/491278299-122204556698145600-7351154097795961159-n.jpg" alt="Pastora Elena" loading="lazy" decoding="async" className="w-12 h-12 rounded-full object-cover border border-primary/30" />
                     <div>
                       {/* 5 Estrelas acima do nome */}
                       <div className="flex gap-0.5 mb-1 text-primary">
@@ -772,14 +772,14 @@ export default function LandingPage() {
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             className="fixed bottom-0 left-0 right-0 p-4 bg-background/80 backdrop-blur-lg border-t border-border z-50 md:hidden flex justify-center"
           >
-      <Button 
-              size="lg" 
-              onClick={() => {
-                document.getElementById("plan-premium")?.scrollIntoView({ behavior: "smooth", block: "center" });
-              }} 
+            <Button
+              size="lg"
               className="w-full max-w-sm h-14 text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-lg"
+              asChild
             >
-              Obtener el Paquete por $9.99
+              <a href="https://pay.hotmart.com/D106702430V" target="_blank" rel="noopener noreferrer">
+                Obtener el Paquete por $9.99
+              </a>
             </Button>
           </motion.div>
         )}
