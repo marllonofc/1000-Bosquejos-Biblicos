@@ -72,7 +72,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-[100dvh] bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
+    <div className="w-full min-h-[100dvh] bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
 
       {/* Decorative background glow — desktop only (blur is too expensive on mobile) */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0 hidden md:block">
@@ -80,7 +80,7 @@ export default function LandingPage() {
         <div className="absolute top-[40%] left-0 w-[35%] h-[35%] rounded-full bg-primary/5 blur-[80px]" />
       </div>
 
-      <div className="relative z-10 overflow-x-hidden">
+      <div className="w-full relative z-10 overflow-x-hidden">
         {/* 1. HERO SECTION */}
         <section className="pt-24 pb-20 md:pt-32 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto flex flex-col items-center text-center">
 
@@ -534,7 +534,8 @@ export default function LandingPage() {
         </section>
 
         {/* 6. PRECIOS */}
-        <section id="precios" className="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto scroll-m-20 overflow-hidden">
+        <section id="precios" className="py-24 w-full scroll-m-20">
+          <div className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -550,7 +551,7 @@ export default function LandingPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-end w-full max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 items-end w-full">
             {/* Plan Básico */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -649,6 +650,7 @@ export default function LandingPage() {
                 </CardContent>
               </Card>
             </motion.div>
+          </div>
           </div>
         </section>
 
