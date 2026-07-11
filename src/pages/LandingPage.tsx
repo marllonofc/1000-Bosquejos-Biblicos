@@ -80,7 +80,7 @@ export default function LandingPage() {
         <div className="absolute top-[40%] -left-[10%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[100px]" />
       </div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 overflow-x-hidden">
         {/* 1. HERO SECTION */}
         <section className="pt-24 pb-20 md:pt-32 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto flex flex-col items-center text-center">
 
@@ -489,7 +489,7 @@ export default function LandingPage() {
                     "Viajo mucho predicando en diferentes altares y a veces la mente se agota. Usar este material como chispazo para nuevas series de mensajes ha sido una bendición para mi mente."
                   </p>
                   <div className="flex items-center gap-3">
-                    <img src="https://i.ibb.co/fzX5TQS1/686202462-10232880034930706-4041396154218817519-n.jpghttps://pay.hotmart.com/D106702430V" alt="Evangelista Marcos" className="w-12 h-12 rounded-full object-cover border border-primary/30" />
+                    <img src="https://i.ibb.co/fzX5TQS1/686202462-10232880034930706-4041396154218817519-n.jpg" alt="Evangelista Marcos" className="w-12 h-12 rounded-full object-cover border border-primary/30" />
                     <div>
                       {/* 5 Estrelas acima do nome */}
                       <div className="flex gap-0.5 mb-1 text-primary">
@@ -504,7 +504,7 @@ export default function LandingPage() {
                     </div>
                   </div>
                 </CardContent>
-                        </Card>
+              </Card>
               {/* Testimonio 3 */}
               <Card className="bg-card border-border/40 flex flex-col justify-between">
                 <CardContent className="p-6 pt-8 relative">
@@ -529,9 +529,9 @@ export default function LandingPage() {
                   </div>
                 </CardContent>
               </Card>
-                      </div>
-                    </div>
-                  </section>
+            </div>
+          </div>
+        </section>
 
         {/* 6. PRECIOS */}
         <section id="precios" className="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto scroll-m-20 overflow-hidden">
