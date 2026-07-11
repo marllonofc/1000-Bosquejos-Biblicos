@@ -551,7 +551,7 @@ export default function LandingPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-end w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-sm md:max-w-none mx-auto w-full">
             {/* Plan Básico */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -560,7 +560,7 @@ export default function LandingPage() {
               transition={{ duration: 0.6 }}
               className="w-full"
             >
-              <Card className="bg-card border-border h-fit w-full">
+                <Card className="w-full bg-card border-border shadow-xl relative overflow-hidden">
                 <CardContent className="p-8">
                   <h3 className="text-xl font-bold text-white mb-2">Plan Básico</h3>
                   <div className="flex items-baseline gap-2 mb-6">
@@ -610,9 +610,9 @@ export default function LandingPage() {
               </div>
 
               {/* ADICIONADO O ID AQUI PARA O BOTÃO FLUTUANTE ENCONTRAR */}
-              <Card id="plan-premium" className="bg-card border-primary ring-1 ring-primary/50 shadow-2xl relative overflow-hidden">
+                <Card id="plan-premium" className="w-full bg-card border-primary ring-1 ring-primary/50 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
-                <CardContent className="p-8 pt-10">
+                  <CardContent className="p-4 xs:p-6 sm:p-8 pt-10">
                   <h3 className="text-2xl font-bold text-primary mb-2">Plan Premium Completo</h3>
                   <div className="flex items-baseline gap-3 mb-6">
                     <span className="text-5xl font-serif font-bold text-white">$9.99</span>
@@ -639,11 +639,11 @@ export default function LandingPage() {
                     </li>
                   </ul>
 
-                  <Button className="w-full h-14 text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-[0_0_20px_-5px_rgba(212,175,55,0.5)]" asChild>
-                    <a href="https://pay.hotmart.com/D106702430V" target="_blank" rel="noopener noreferrer">
-                      Adquirir Todo el Paquete por $9.99
-                    </a>
-                  </Button>
+                    <Button className="w-full h-14 text-base md:text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-[0_0_20px_-5px_rgba(212,175,55,0.5)] animate-pulse" asChild>
+                      <a href="https://pay.hotmart.com/D106702430V" target="_blank" rel="noopener noreferrer">
+                        ¡Obtener Acceso Premium!
+                      </a>
+                    </Button>
                   <p className="text-center text-xs text-muted-foreground mt-4">
                     Pago único • Acceso de por vida
                   </p>
