@@ -534,7 +534,7 @@ export default function LandingPage() {
                   </section>
 
         {/* 6. PRECIOS */}
-        <section id="precios" className="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto scroll-m-20">
+        <section id="precios" className="py-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto scroll-m-20 overflow-hidden">
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -550,15 +550,16 @@ export default function LandingPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-end max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 items-end w-full max-w-4xl mx-auto">
             {/* Plan Básico */}
             <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="w-full"
             >
-              <Card className="bg-card border-border h-fit">
+              <Card className="bg-card border-border h-fit w-full">
                 <CardContent className="p-8">
                   <h3 className="text-xl font-bold text-white mb-2">Plan Básico</h3>
                   <div className="flex items-baseline gap-2 mb-6">
@@ -595,11 +596,11 @@ export default function LandingPage() {
 
             {/* Plan Premium */}
             <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative"
+              className="relative w-full"
             >
               <div className="absolute -top-4 inset-x-0 flex justify-center z-10">
                 <Badge className="bg-primary text-primary-foreground font-bold px-4 py-1 border-none shadow-lg">
