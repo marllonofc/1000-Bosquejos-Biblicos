@@ -132,10 +132,23 @@ export default function LandingPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <Button size="lg" onClick={scrollToPricing} className="text-lg px-8 py-7 bg-primary text-primary-foreground hover:bg-primary/90 rounded-sm font-bold tracking-wide shadow-[0_0_40px_-10px_rgba(212,175,55,0.4)] transition-all hover:scale-105">
-              Ver Oferta Especial
-              <ChevronRight className="ml-2 w-5 h-5" />
-            </Button>
+            <Button 
+  size="lg" 
+  onClick={() => {
+    const basicCard = document.getElementById("plan-basico");
+    if (basicCard) {
+      // No celular, o -20 esconde o título "Invierte en..." e foca direto no topo do card básico
+      // No desktop, usa -80 para alinhar a seção inteira
+      const yOffset = window.innerWidth < 768 ? -20 : -80;
+      const y = basicCard.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }}
+  className="text-lg px-8 py-7 bg-primary text-primary-foreground hover:bg-primary/90 rounded-sm font-bold tracking-wide shadow-[0_0_40px_-10px_rgba(212,175,55,0.4)] transition-all hover:scale-105"
+>
+  Ver Oferta Especial
+  <ChevronRight className="ml-2 w-5 h-5" />
+</Button>
             <div className="mt-4 text-sm text-muted-foreground flex items-center justify-center gap-2">
               <ShieldCheck className="w-4 h-4 text-primary/70" />
               Garantía de 7 días. Acceso inmediato.
@@ -560,8 +573,10 @@ export default function LandingPage() {
               transition={{ duration: 0.6 }}
               className="w-full"
             >
-                <Card className="w-full bg-card border-border shadow-xl relative overflow-hidden">
-                <CardContent className="p-8">
+              {/* ADICIONADO O ID "plan-basico" AQUI */}
+              <Card id="plan-basico" className="w-full bg-card border-border shadow-xl relative overflow-hidden">
+                {/* Ajustado o padding lateral para telas pequenas */}
+                <CardContent className="p-4 xs:p-6 sm:p-8">
                   <h3 className="text-xl font-bold text-white mb-2">Plan Básico</h3>
                   <div className="flex items-baseline gap-2 mb-6">
                     <span className="text-4xl font-serif font-bold text-white">$5</span>
