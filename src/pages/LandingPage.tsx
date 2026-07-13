@@ -655,7 +655,7 @@ export default function LandingPage() {
                   </ul>
 
                     <Button className="w-full h-14 text-base md:text-lg bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-[0_0_20px_-5px_rgba(212,175,55,0.5)] animate-pulse" asChild>
-                      <a href="https://pay.hotmart.com/D106702430V" target="_blank" rel="noopener noreferrer">
+                      <a href="https://pay.hotmart.com/D106702430V?checkoutMode=10" target="_blank" rel="noopener noreferrer">
                         ¡Obtener Acceso Premium!
                       </a>
                     </Button>
