@@ -599,7 +599,7 @@ export default function LandingPage() {
                   </ul>
 
                   <Button variant="outline" className="w-full h-12 text-md border-primary/30 hover:bg-primary/10" asChild>
-                    <a href="https://pay.hotmart.com/Y106702539Q" target="_blank" rel="noopener noreferrer">
+                    <a href="https://pay.hotmart.com/Y106702539Q?checkoutMode=10" target="_blank" rel="noopener noreferrer">
                       Comprar Plan Básico
                     </a>
                   </Button>
